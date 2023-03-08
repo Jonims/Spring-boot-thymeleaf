@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Funcionários</title>
+</head>
+<body>
+<form action="#" th:action="@{/add-funcionario}" th:object="${funcionario}" method = "POST">
+    Nome: <input type="text" th:field="*{nome}" name = "name">
+    <br />
+    Data de nascimento: <input type="text" th:field="*{dataNascimento}" name = "dataNascimento" />
+    <br />
+    Naturalidade: <input type="text" th:field="*{naturalidade}" name = "naturalidade" />
+    <br />
+    telefone de Contato: <input type="text" th:field="*{telefone}" name = "telefone" />
+    <br />
+    E-mail: <input type="text" th:field="*{email}" name = "email" />
+    <br />
+    Cpf: <input type="text" th:field="*{cpf}" name = "cpf" />
+    <br />
+    Cidade: <input type="text" th:field="*{cidade}" name = "cidade" />
+    <br />
+    Cep: <input type="text" th:field="*{rua}" name = "rua" />
+    <br />
+    Número da casa: <input type="text" th:field="*{rua}" name = "rua" />
+    <br />
+    Data de entrada: <input type="text" th:field="*{rua}" name = "rua" />
+    <br />
+    Data de saída: <input type="text" th:field="*{rua}" name = "rua" />
+    <br />
+    Salário: <input type="text" th:field="*{rua}" name = "rua" />
+    <br />
+    Função: <input type="text" th:field="*{rua}" name = "rua" />
+    <br />
+
+    <input type="submit" name="save" value="Cadastrar Funcionário" />
+</form>
+</body>
+</html>

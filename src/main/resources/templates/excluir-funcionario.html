@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Funcionários</title>
+</head>
+<body>
+<form action="#" th:action="@{/excluir/{id}(id=${comodo.id})}" th:object="${funcionario}" th:method = "PUT">
+    Nome: <span th:text="${funcionario.nome}"></span>
+    <br />
+    Data de Nascimento: <span th:text="${funcionario.dataNascimento}"></span>
+    <br />
+    Naturalidade: <span th:text="${funcionario.naturalidade}"></span>
+    <br />
+    Telefone de Contato: <span th:text="${funcionario.telefone}"></span>
+    <br />
+    E-mail: <span th:text="${funcionario.email}"></span>
+    <br />
+    Cidade: <span th:text="${funcionario.cidade}"></span>
+    <br />
+    Cep: <span th:text="${funcionario.cep}"></span>
+    <br />
+    Número da casa: <span th:text="${funcionario.Numero}"></span>
+    <br />
+    Data de entrada: <span th:text="${funcionario.dataEntrada}"></span>
+    <br />
+    Data de saída: <span th:text="${funcionario.dataSaida}"></span>
+    <br />
+    Salário: <span th:text="${funcionario.salario}"></span>
+    <br />
+    Função: <span th:text="${funcionario.funcao}"></span>
+
+    <input type="submit" name="save" value="Excluir Funcionário" />
+</form>
+</body>

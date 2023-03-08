@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Comodos</title>
+    <link href="style.css">
+</head>
+<body>
+<div th:switch="${#lists.size(funcionarios)}">
+    <h2 th:case="0">Não existem funcionários registrados!</h2>
+    <div th:case="*">
+        <h2>Funcionários</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Data de nascimento</th>
+                <th>Naturalidade</th>
+                <th>Telefone de Contato</th>
+                <th>E-mail</th>
+                <th>Cpf</th>
+                <th>Cidade</th>
+                <th>Cep</th>
+                <th>Número da casa</th>
+                <th>Data de entrada</th>
+                <th>Data de saída</th>
+                <th>Salário</th>
+                <th>Função</th>
+                <th>telefone de Contato</th>
+
+                <th>Ações</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="funcionario : ${funcionarios}">
+                <td th:text="${funcionario.nome}"></td>
+                <td th:text="${funcionario.dataNascimento}"></td>
+                <td th:text="${funcionario.naturalidade}"></td>
+                <td th:text="${funcionario.telefone}"></td>
+                <td th:text="${funcionario.email}"></td>
+                <td th:text="${funcionario.cpf}"></td>
+                <td th:text="${funcionario.cidade}"></td>
+                <td th:text="${funcionario.numero}"></td>
+                <td th:text="${funcionario.dataEntrada}"></td>
+                <td th:text="${funcionario.dataSaida}"></td>
+                <td th:text="${funcionario.salario}"></td>
+                <td th:text="${funcionario.funcao}"></td>
+                <td>
+                    <a th:href="@{/funcionario-edit/{id}(id=${funcionario.id})}">Editar</a>
+                    <a th:href="@{/funcionario-delete/{id}(id=${funcionario.id})}">Excluir</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/novo-cadastro">Adicionar um novo funcionário</a></p>
+</div>
+</body>
+</html>
